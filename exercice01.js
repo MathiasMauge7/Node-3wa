@@ -1,14 +1,29 @@
-const number = 97;
+let count = 0;
 
-const choix = 97;
+process.stdout.write("bonjour \n");
 
-process.stdin.write("bonjour \n");
+process.stdin.on("data", (chunk) => {
+  const number = parseInt(chunk);
+  const goldNumber = 42;
 
-if (choix < 97) {
-  console.log("Le nombre est plus grand.");
-} else if (choix > 97) {
-  console.log("Le nombre est plus petit.");
-} else {
-  console.log("Bravo vous avez trouvé!");
-  process.stdout.write("au revoir \n");
-}
+  count++;
+
+  if (isNaN(number) === true) {
+    process.stdout.write("Un Nombre on a dit !");
+  }
+
+  if (count > 5) {
+    process.stdout.write("Il vous reste moins de 5 essais..");
+  }
+
+  if (number < goldNumber) {
+    process.stdout.write(`Le nombre est plus grand que ${number}. \n`);
+  } else if (number > goldNumber) {
+    process.stdout.write(`Le nombre est plus petit que ${number}.\n`);
+  } else {
+    process.stdout.write(
+      `Bravo vous avez trouvé en ${count} tentative! Le nombre est bien ${goldNumber}`
+    );
+    process.exit(0);
+  }
+});
