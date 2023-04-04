@@ -2,7 +2,7 @@ const fs = require("fs");
 
 // Métode asynchrone
 
-fs.readFile("alien.txt", "utf8", (err, data) => {
+fs.readFile("demo2.txt", "utf8", (err, data) => {
   if (err) {
     console.error(err);
     return;
@@ -14,7 +14,7 @@ fs.readFile("alien.txt", "utf8", (err, data) => {
 // Métode synchrone
 
 try {
-  const data = fs.readFileSync("alien.txt", "utf8");
+  const data = fs.readFileSync("demo2.txt", "utf8");
   console.log(data);
 } catch (err) {
   console.log(err);
@@ -25,7 +25,7 @@ try {
 // const { writeFile } = fs;
 // const data = "Hello Node !";
 
-// writeFile("alien.txt", data, (err) => {
+// writeFile("demo2.txt", data, (err) => {
 //   if (err) throw err;
 //   console.log("Saved!");
 // });
@@ -35,7 +35,7 @@ try {
 const { appendFile } = fs;
 const data2 = "Un texte";
 
-appendFile("alien.txt", data2, (err) => {
+appendFile("demo2.txt", data2, (err) => {
   if (err) throw err;
   console.log("Saved 2!");
 });
