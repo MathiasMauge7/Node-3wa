@@ -20,7 +20,7 @@ rl.on("line", function (line) {
       process.exit(0);
 
     default:
-      console.log(line.trim() + "n'est pas étudiant.");
+      console.log(line.trim() + " n'est pas étudiant.");
   }
   rl.prompt();
 });
