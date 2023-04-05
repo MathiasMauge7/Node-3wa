@@ -6,12 +6,17 @@ const port = "8000";
 const server = http.createServer((req, res) => {
   const url = req.url.replace("/", "");
 
-  res.end("Bonjour les nazes");
-
   if (url === "all") {
-    const data = fs.readFile("./Data/all.json", "utf8", (data) => {
+    console.log("c'est all");
+    fs.readFile("./Data/all.json", "utf8", (err, data) => {
       res.end(data); //tranformer les données json pour pouvoir les lire
     });
+  } else if (url === "search/alan") {
+    fs.readFile("./Data/alan.json", "utf8", (err, data) => {
+      res.end(data); //tranformer les données json pour pouvoir les lire
+    });
+  } else {
+    res.end("Bonjour les nazes");
   }
 });
 server.listen(port, hostname, () => {
