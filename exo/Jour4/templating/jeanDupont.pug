@@ -1,0 +1,10 @@
+.user-card
+    h4 #{name.first} #{name.last} <small>#{age}</small>
+
+    p Né le #{birthdate}
+    p Vit à <strong>#{location.city}, #{location.zipcode}</strong>
+
+    if isAdmin
+        span
+            .badge-main Vous êtes admin
+

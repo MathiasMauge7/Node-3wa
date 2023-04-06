@@ -1,0 +1,121 @@
+nav
+    ul
+        li 
+            a(href='/home') Home 
+        li 
+            a(href='/portfolio') Portfolio 
+        li 
+            a(href='/contact') Contact  
+
+nav: ul:
+    li: a(href='/home') Home 
+    li: a(href='/portfolio') Portfolio 
+    li: a(href='/contact') Contact 
+    
+//- attribut
+
+input(
+    type='radio'
+    name='gender'
+    value='male'
+)
+
+input(type='radio' name='gender' value='male')
+
+//- class id
+
+main#container 
+    article
+        //- Créer une div avec une class article-inner
+        .article-inner 
+            //- Le . c'est pour lui faire comprendre que le p contient plusieurs lignes 
+            p.
+                Lorem Ipsum
+                Lorem Ipsum 2
+                Lorem Ipsum 3
+
+p Ceci est un texte <strong> gras </strong>
+
+p 
+    Ceci est un texte <strong> gras </strong>
+
+p.
+    Un nouveau texte
+        strong gras
+
+div 
+    p Je suis dans le paragraphe 
+    | Je suis en dehors du paragraphe 
+
+h1 Hello #{name}
+p Vous avez #{age} et êtes #{gender}
+
+h1 Hello #{name}
+p Your age :
+    output = age
+
+select
+    option(value = gender) = gender 
+
+article
+    - const { title, date, author } = post 
+    h1 = title
+    p Written by  author
+    time(datetime = date.toISOString()) = date.toLocalDateString()
+
+article 
+    -
+        const { title, date, author } = post;
+        const ISODate = date.toISOString();
+        const formattedDate = date.toLocalDateString()
+    
+    h1 = title
+    p Written by  author
+    time(datetime = ISODate) = formattedDate 
+
+
+input(type='text' id='message')
+p Hello <span id="messageValue"></span>
+
+script. 
+    const messageEl = document.getElementById('message');
+    const span = document.getElementById('messageValue');
+    messageEl.oninput = (event) => {
+        span.textContent = event.target.value;
+    }
+
+if results 
+    if results.length > 1
+        p Il y a #{result.length} résulats de recherche 
+    else if result.length === 1 
+        p Il y a un unique résultat
+    else 
+        p Aucun résultat 
+else 
+    p Aucune recherche effectuée 
+
+//- -----
+unless user.logged 
+    p Veuillez vous authentifier 
+
+//- ou
+
+if !user.logged 
+    p Veuillez vous authentifier 
+//- ----
+
+case user.gender 
+    when 'M'
+        p Homme 
+    when 'F'
+        p Femme 
+    default 
+        p 'Autre'
+
+//- Commentaire non affiché dans le rendu
+// Commentaire affiché dans le rendu
+
+
+
+
+
