@@ -1,0 +1,26 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-group{
+    padding: 1em;
+    flex-direction: column;
+    display: flex;
+    justify-content: space-between;
+    height: 60px;
+}
+
+.form{
+    text-align: center;
+}
+
+.btn {
+    border-radius: 15px;
+    width: 80px;
+    height: 30px;
+    background: black;
+    color: white;
+}
