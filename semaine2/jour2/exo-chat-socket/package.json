@@ -1,0 +1,26 @@
+{
+  "name": "exo-chat-socket",
+  "version": "1.0.0",
+  "description": "Chate realise avec socket.io",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "(https://github.com/MathiasMauge7/Node-3wa)"
+  },
+  "keywords": [
+    "chat",
+    "socket",
+    "socket.io",
+    "node",
+    "nodejs"
+  ],
+  "author": "Mathias",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "socket.io": "^4.6.1"
+  }
+}

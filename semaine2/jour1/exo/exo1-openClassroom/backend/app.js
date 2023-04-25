@@ -1,6 +1,17 @@
 const express = require("express");
+const mongoose = require("mongoose");
 
 const app = express();
+
+mongoose
+  .connect(
+    "mongodb+srv://jimbob:vK59wtaUmufDiVKZ@cluster0-pme76.mongodb.net/exoOpenClassroom-vente?retryWrites=true&w=majority",
+    { useNewUrlParser: true, useUnifiedTopology: true }
+  )
+  .then(() => console.log("Connexion à MongoDB réussie !"))
+  .catch(() => console.log("Connexion à MongoDB echoue !"));
+
+app.use(express.json());
 
 app.use((req, res, next) => {
   res.setHeader("Access-Control-Allow-Origin", "*");
@@ -15,7 +26,14 @@ app.use((req, res, next) => {
   next();
 });
 
-app.use("/api/stuff", (req, res, next) => {
+app.post("/api/stuff", (req, res, next) => {
+  console.log(req.body);
+  res.status(201).json({
+    message: "objet créé !",
+  });
+});
+
+app.get("/api/stuff", (req, res, next) => {
   const stuff = [
     {
       _id: "oeihfzeoi",
